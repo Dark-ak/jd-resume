@@ -1,14 +1,33 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
-import { Barlow, Nunito, JetBrains_Mono } from "next/font/google"
-import { cn } from "@/lib/utils"
+import { Barlow, JetBrains_Mono, Nunito } from "next/font/google";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const barlow = Barlow({ subsets: ['latin', 'latin-ext', 'vietnamese'], weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'], variable: '--font-barlow' });
+const barlow = Barlow({
+  subsets: ["latin", "latin-ext", "vietnamese"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-barlow",
+});
 
-const nunito = Nunito({ subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext', 'vietnamese'], weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'], variable: '--font-nunito' });
+const nunito = Nunito({
+  subsets: ["latin", "latin-ext", "cyrillic", "cyrillic-ext", "vietnamese"],
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900", "1000"],
+  variable: "--font-nunito",
+});
 
-const jetBrainsMono = JetBrains_Mono({ subsets: ['latin', 'latin-ext', 'cyrillic', 'cyrillic-ext', 'greek', 'vietnamese'], weight: ['100', '200', '300', '400', '500', '600', '700', '800'], variable: '--font-jetbrains-mono' });
+const jetBrainsMono = JetBrains_Mono({
+  subsets: [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "vietnamese",
+  ],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrains-mono",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +38,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-    className={cn("antialiased", barlow.variable, nunito.variable, jetBrainsMono.variable)}
+      className={cn(
+        "antialiased",
+        barlow.variable,
+        nunito.variable,
+        jetBrainsMono.variable,
+      )}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

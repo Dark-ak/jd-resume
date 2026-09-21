@@ -26,13 +26,11 @@ export default async function LoadPdf(
 
     const renderContext = {
       canvasContext: context,
-      viewport: viewport
-    }
+      viewport: viewport,
+    };
 
-    await page.render({ ...renderContext, canvas }).promise
-  } catch(error) {
-
-    console.log(error)
-    
+    await page.render({ ...renderContext, canvas }).promise;
+  } catch (error) {
+    console.log(error);
   }
 }
